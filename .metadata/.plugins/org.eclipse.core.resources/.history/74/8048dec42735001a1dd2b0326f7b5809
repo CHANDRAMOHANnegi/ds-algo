@@ -1,0 +1,74 @@
+package hackerrank;
+
+import java.io.*;
+import java.util.*;
+
+public class ClimbingLeaderboard {
+
+	static public int removeduplicates(int[] arr) {
+ 		if(arr.length==0||arr.length==1) {
+ 			return arr.length;
+ 		}
+ 		int j=0;
+		for (int i = 0; i < arr.length-1; i++) {
+			if (arr[i] != arr[i+1]){  
+                arr[j++] = arr[i];  
+            } 
+		}
+		arr[j++] = arr[arr.length-1]; 
+		return arr.length;
+	}
+	
+	 public static int removeDuplicateElements(int arr[], int n){  
+	        if (n==0 || n==1){  
+	            return n;  
+	        }    
+	        int j = 0;//for next element  
+	        for (int i=0; i < n-1; i++){  
+	            if (arr[i] != arr[i+1]){  
+	                arr[j++] = arr[i];  
+	            }  
+	        }  
+	        arr[j++] = arr[n-1];  
+	        return j;  
+	    }  
+
+	static int[] climbingLeaderboard(int[] score, int[] alice) {
+		ArrayList<Integer> list = removeduplicates(score);
+		Integer[] scores = list.toArray(new Integer[list.size()]);
+
+		int[] result = new int[alice.length];
+		int i = 0;
+
+		while (i < alice.length) {
+			int position = 1;
+			for (int j = 0; j < (scores.length); j++) {
+				if (j > 0 && (scores[j] == scores[j - 1])) {
+					continue;
+				} else if (scores[j] <= alice[i]) {
+					result[i] = position;
+					break;
+				} else {
+					position++;
+					if (j == scores.length) {
+						result[i] = position;
+						break;
+					}
+				}
+				result[i] = position;
+			}
+			i++;
+		}
+		return result;
+	}
+
+	public static void main(String[] args) throws IOException {
+
+		int[] scores = { 100, 90, 90, 80, 75, 60 };
+		int[] alice = { 50, 65, 77, 90, 102 };
+		int[] result = climbingLeaderboard(scores, alice);
+		for (int i : result) {
+			System.out.println(i);
+		}
+	}
+}

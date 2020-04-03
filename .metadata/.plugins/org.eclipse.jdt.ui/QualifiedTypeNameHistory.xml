@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="sorting.SelectionSort"/>
+    <fullyQualifiedTypeName name="javax.swing.text.StyledEditorKit.ForegroundAction"/>
+    <fullyQualifiedTypeName name="sorting.InsertionSort"/>
+    <fullyQualifiedTypeName name="sorting.Sort"/>
+    <fullyQualifiedTypeName name="sorting.BubbleSort"/>
+    <fullyQualifiedTypeName name="sorting.MergeSort"/>
+    <fullyQualifiedTypeName name="Queue.LinkedListQueue.QueueNode"/>
+    <fullyQualifiedTypeName name="java.lang.Integer"/>
+</qualifiedTypeNameHistroy>

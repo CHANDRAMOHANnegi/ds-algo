@@ -1,0 +1,63 @@
+package hackerrank;
+
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+
+public class AlmostSorted {
+	static void almostSorted(int[] arr) {
+
+		boolean swap = false;
+		boolean reverse = false;
+		boolean state = false;
+		int start = 0;
+		int end = 0;
+		int b[] = new int[arr.length];
+		for (int i = 0; i < arr.length; i++)
+			b[i] = arr[i];
+
+		Arrays.sort(b);
+		outer: for (int i = 0; i < b.length; i++) {
+
+			inner: for (int j = i; j < arr.length; j++) {
+				if (b[i] == arr[j]) {
+					if (state) {
+						end = j;
+						break outer;
+					} else {
+						break inner;
+					}
+				} else {
+					if (!state) {
+						start = j;
+						state = true;
+					}
+				}
+			}
+		}
+
+		int subArray[] = new int[end - start];
+		for (int i = 0; i < (end - start); i++)
+			subArray[i] = arr[start+i];
+
+		for (int i : subArray) {
+			System.out.println(i);
+		}
+		System.out.println(" start " + start + "  end " + end);
+	}
+
+	private static final Scanner scanner = new Scanner(System.in);
+
+	public static void main(String[] args) {
+
+		int[] arr = { 1, 5, 4, 3, 2, 6 };
+
+		almostSorted(arr);
+
+		scanner.close();
+	}
+}

@@ -1,0 +1,39 @@
+package geeksForGeeks;
+
+/*package whatever //do not write package name here */
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+public class SumOfNumInString {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+
+		int noOfTesCases = 1;// sc.nextInt();
+
+		while (noOfTesCases != 0) {
+
+			int sum = 0;
+
+			String str = "sdf4hg567j7kj";
+
+			for (int i = 0; i < str.length(); i++) {
+
+				if (Character.isDigit(str.charAt(i))) {
+					int j = i + 1;
+					while (j < str.length() && Character.isDigit(str.charAt(j))) {
+						j++;
+					}
+					String s=str.substring(i, j);
+					sum = sum + Integer.parseInt(s);
+					System.out.println( Integer.parseInt(str.substring(i, j)));
+				}
+
+			}
+//			System.out.println(sum);
+			noOfTesCases--;
+		}
+	}
+}

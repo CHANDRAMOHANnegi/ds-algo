@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="ImportExportAction">
+	</section>
+	<section name="FileSystemImportWizard">
+	</section>
+	<section name="org.eclipse.ui.internal.QuickAccess">
+		<item key="dialogHeight" value="667"/>
+		<item key="dialogWidth" value="823"/>
+		<list key="orderedElements">
+			<item value="org.eclipse.debug.ui.LaunchingPreferencePage"/>
+			<item value="org.eclipse.egit.ui.GitRepositoryExploring"/>
+		</list>
+		<list key="orderedProviders">
+			<item value="org.eclipse.ui.preferences"/>
+			<item value="org.eclipse.ui.perspectives"/>
+		</list>
+		<list key="textEntries">
+			<item value="1"/>
+			<item value="1"/>
+		</list>
+		<list key="textArray">
+			<item value="term"/>
+			<item value="  "/>
+		</list>
+	</section>
+	<section name="NewWizardAction">
+	</section>
+	<section name="WorkbenchPreferenceDialogSettings">
+		<item key="DIALOG_X_ORIGIN" value="219"/>
+		<item key="DIALOG_Y_ORIGIN" value="0"/>
+	</section>
+</section>

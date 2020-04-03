@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename field &apos;head&apos; in &apos;Queue.LinkedListQueue&apos; to &apos;front&apos;&#x0A;- Original project: &apos;ds&apos;&#x0A;- Original element: &apos;Queue.LinkedListQueue.head&apos;&#x0A;- Renamed element: &apos;Queue.LinkedListQueue.front&apos;&#x0A;- Update references to refactored element&#x0A;- Update textual occurrences in comments and strings" delegate="false" deprecate="false" description="Rename field &apos;head&apos;" flags="589830" getter="false" id="org.eclipse.jdt.ui.rename.field" input="/src&lt;Queue{LinkedListQueue.java[LinkedListQueue^head" name="front" references="true" setter="false" stamp="1569753395218" textual="false" version="1.0"/>
+</session>

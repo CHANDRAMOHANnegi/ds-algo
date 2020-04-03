@@ -16,9 +16,9 @@ public class Sort {
 
 //      SelectionSort.selectionSort(arr);
 //		InsertionSort.insertionSort(arr3);
-		int sorted[]=MergeSort.mergeSort(arr1, 0, arr1.length-1);
-//		BubbleSort.bubbleSort(arr);
-		for (int i : sorted) {
+//		int sorted[]=MergeSort.mergeSort(arr1, 0, arr1.length-1);
+		BubbleSort.bubbleSort(arr);
+		for (int i : arr) {
 			System.out.println(i);
 		}
 	}

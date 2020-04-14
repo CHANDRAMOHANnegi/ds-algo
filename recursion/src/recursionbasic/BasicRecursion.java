@@ -20,7 +20,6 @@ public class BasicRecursion {
 		if (m == 0) {
 			return 1;
 		}
-
 		return power(n, m - 1) * n;
 	}
 
@@ -28,7 +27,6 @@ public class BasicRecursion {
 		if (idx == 0) {
 			return arr[idx];
 		}
-
 		int MAX = max(arr, idx - 1);
 		return Math.max(MAX, arr[idx]);
 

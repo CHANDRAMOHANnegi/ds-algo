@@ -6,11 +6,10 @@
 		<item key="DIALOG_WIDTH" value="380"/>
 		<item key="DIALOG_HEIGHT" value="444"/>
 		<item key="DIALOG_FONT_NAME" value="1|Ubuntu|11.0|0|GTK|1|"/>
-		<item key="ShowViewDialog.STORE_SELECTED_VIEW_ID" value="org.eclipse.tm.terminal.view.ui.TerminalsView"/>
+		<item key="ShowViewDialog.STORE_SELECTED_VIEW_ID" value="org.eclipse.ui.console.ConsoleView"/>
 		<list key="ShowViewDialog.STORE_EXPANDED_CATEGORIES_ID">
 			<item value="General"/>
-			<item value="Mylyn"/>
-			<item value="Terminal"/>
+			<item value="XML"/>
 		</list>
 	</section>
 </section>

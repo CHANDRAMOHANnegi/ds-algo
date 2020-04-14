@@ -48,10 +48,26 @@ public class SubSequence {
 
 	}
 
+	public static void subS(String ques, String asf) {
+
+		if (ques.length() == 0) {
+			System.out.println(asf);
+			return;
+		}
+
+		char c = ques.charAt(0);
+		String rem = ques.substring(1);
+
+		subS(rem, asf);
+		subS(rem, asf + c);
+
+	}
+
 	public static void main(String[] args) {
 		String str = "ab";
+		subS(str, "");
 //		System.out.println(SubSequence.subsequence(str));	
-		System.out.println(SubSequence.subsequenceASCII(str));
+//		System.out.println(SubSequence.subsequenceASCII(str));
 
 	}
 }

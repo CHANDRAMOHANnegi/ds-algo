@@ -36,7 +36,6 @@ public class KequalSumSubset {
 					inner: for (int j = i - 1; j >= 0; j--) {
 						if (nums[j] > 0) {
 							if (isum + nums[j] == equal) {
-								System.out.println(nums[i] + " ==== " + nums[j]);
 								nums[i] = -1;
 								nums[j] = -1;
 								answer = canPartitionKSubsets(nums, --k);

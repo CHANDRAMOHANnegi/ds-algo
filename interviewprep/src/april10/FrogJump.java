@@ -1,4 +1,4 @@
-package dynamicprogramming;
+package april10;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -14,6 +14,7 @@ public class FrogJump {
 //	0,1,3,5,6,8,12,17
 //	1,2,3,4,5,6, 7, 8
 
+	// recursive solution not working
 	public static boolean solve(int stones[], int idx, int prev) {
 
 		if (idx == 1 && stones[idx] > 1) {
@@ -41,6 +42,8 @@ public class FrogJump {
 		return res;
 	}
 
+	
+	// tabulation with hashmap arraylist
 	public static boolean solveT(int[] nums) {
 		HashMap<Integer, ArrayList<Integer>> map = new HashMap<Integer, ArrayList<Integer>>();
 		map.put(0, new ArrayList<Integer>(Arrays.asList(1)));
@@ -71,8 +74,7 @@ public class FrogJump {
 				}
 			}
 		}
-	 
-		return !(map.get(nums[nums.length - 1])==null);
+		return !(map.get(nums[nums.length - 1]) == null);
 	}
 
 	public static void main(String[] args) {

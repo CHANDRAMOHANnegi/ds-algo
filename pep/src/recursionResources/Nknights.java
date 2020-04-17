@@ -16,7 +16,7 @@ public class Nknights {
 		nknights(chess, kpsf, box + 1, ans);
 
 		int row = box / chess.length;
-		int col = box % chess.length;
+		int col = box % chess[0].length;
 
 		if (!chess[row][col]) {
 			if (isknightSafe(chess, row, col)) {

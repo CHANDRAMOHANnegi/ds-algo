@@ -6,6 +6,8 @@ package march31;
 
 public class JumpGameII {
 
+	
+	//recursion ---> time limit exceed
 	public static int solveR(int nums[], int idx) {
 		if (idx == nums.length - 1) {
 			System.out.println(idx);
@@ -24,6 +26,8 @@ public class JumpGameII {
 		return res + 1;
 	}
 
+	
+	//tabulation
 	public static int solveT(int nums[]) {
 		nums[nums.length - 1] = 0;
 		for (int i = nums.length - 2; i >= 0; i--) {
@@ -45,6 +49,7 @@ public class JumpGameII {
 		return nums[0];
 	}
 
+	//memoization
 	public static int solveM(int nums[], int idx) {
 		if (idx == nums.length - 1) {
 			return 0;

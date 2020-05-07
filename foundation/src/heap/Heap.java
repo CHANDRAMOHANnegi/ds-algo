@@ -42,7 +42,6 @@ public class Heap {
 				swap(pi, ci);
 				upheapify(pi);
 			}
-
 		}
 
 		public int remove() {
@@ -55,27 +54,24 @@ public class Heap {
 
 		public void update(int preval, int newval) {
 			int idx = -1;
-
 			for (int i = 0; i < arr.size(); i++) {
 				if (arr.get(i) == preval) {
 					idx = i;
 					break;
 				}
 			}
-
 			if (idx == -1) {
 				return;
 			}
 			arr.set(idx, newval);
 			upheapify(idx);
 			downheapify(idx, arr.size() - 1);
-
 		}
 
 		void downheapify(int idx, int n) {
 			int maxidx = idx;
 			int lci = 2 * idx + 1;
-			int rci = 2 * idx + 1;
+			int rci = 2 * idx + 2;
 
 			if (lci < n && compareTo((int) arr.get(lci), (int) arr.get(maxidx)) > 0) {
 				maxidx = lci;

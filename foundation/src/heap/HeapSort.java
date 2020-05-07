@@ -11,12 +11,6 @@ public class HeapSort {
 		for (int i = arr.length / 2 - 1; i >= 0; i--) {
 			downheapify(arr, i, arr.length, isMax);
 		}
-
-		for (int k : arr) {
-			System.out.print(k + " ");
-		}
-		System.out.println();
-
 		for (int i = arr.length - 1; i > 0; i--) {
 			swap(arr, 0, i);
 			downheapify(arr, 0, i, isMax);

@@ -10,22 +10,19 @@ public class XofKind {
 		return gcd(b, a % b);
 	}
 
-	public static boolean solve(int[] arr) {
-
+	public static boolean solve(int[] deck) {
 		HashMap<Integer, Integer> map = new HashMap<>();
-
-		for (int i : arr) {
+		for (int i : deck) {
 			if (map.containsKey(i)) {
 				map.put(i, map.get(i) + 1);
 			} else {
 				map.put(i, 1);
 			}
 		}
-		int gcd = map.get(arr[0]);
+		int gcd = map.get(deck[0]);
 		for (int i : map.keySet()) {
 			gcd = gcd(map.get(i), gcd);
 		}
-
 		if (gcd < 2) {
 			return false;
 		}
@@ -36,6 +33,7 @@ public class XofKind {
 		int arr[] = { 1, 1, 2, 2, 4, 4, 3, 5, 5, 3, 6, 6, 6 };
 		System.out.println(solve(arr));
 
+		
 		System.out.println(3 % 11);// 3
 		System.out.println(-3 % 11);// -3
 		System.out.println(3 % -11);// 3

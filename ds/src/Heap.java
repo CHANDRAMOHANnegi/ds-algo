@@ -1,76 +1,99 @@
-import java.util.ArrayList;
 
 public class Heap {
 
-	public static void main(String[] args) {
+	int size;
+	int maxSize;
+	int heap[];
+	boolean isMax;
+
+	public Heap(int maxSize, boolean isMax) {
+		this.heap = new int[maxSize];
+		this.isMax = isMax;
+		this.maxSize = maxSize;
+	}
+
+	public void swap(int x, int y) {
+		int temp = heap[x];
+		heap[x] = heap[y];
+		heap[y] = temp;
+	}
+
+	public void downHeapify(int idx) {
+		int maxidx = idx;
+
+		int left = idx * 2 + 1;
+		int right = idx * 2 + 2;
+
+		if (left < heap.length && compare(heap[left], heap[maxidx]) > 0)
+			maxidx = left;
+		if (right < heap.length && compare(heap[right], heap[maxidx]) > 0)
+			maxidx = right;
+
+		if (maxidx != idx) {
+			swap(maxidx, idx);
+			downHeapify(maxidx);
+		}
 
 	}
 
-	public static class priorityQueue {
-		ArrayList<Integer> arr = new ArrayList<Integer>();
-		boolean isMax = true;
+	public int compare(int a, int b) {
+		if (isMax)
+			return a - b;
+		return b - a;
+	}
 
-		priorityQueue(boolean isMAx) {
-			this.isMax = isMAx;
+	public void upHeapify(int idx) {
+		int parent = (idx - 1) / 2;
+		if (parent >= 0 && compare(heap[parent], heap[idx]) < 0) {
+			swap(parent, idx);
+			upHeapify(parent);
 		}
+	}
 
-		priorityQueue(int[] arr1, boolean isMAx) {
-			this.isMax = isMAx;
-
-			for (int i = 0; i < arr1.length; i++) {
-				arr.add(arr1[i]);
-			}
-			for (int i = arr.size() - 1; i >= 0; i--) {
-				downheapify(i);
-			}
-
+	public void insert(int n) {
+		heap[size] = n;
+		System.out.println("-->" + size);
+		for (int i : heap) {
+			System.out.print(" " + i);
 		}
+		upHeapify(size);
+		size++;
+	}
 
-		void upheapify(int ci) {
-			int pi = ci - 1 >> 1;
-			if (pi >= 0 && compareTo((int) arr.get(ci), (int) arr.get(pi)) > 0) {
-				swap(pi, ci);
-				upheapify(pi);
-			}
+	public int remove() {
+		int poped = heap[0];
+		heap[0] = heap[--size];
+		downHeapify(0);
+		return poped;
+	}
 
+	public void print() {
+		for (int i = 0; i <= size / 2; i++) {
+			System.out.print(
+					" PARENT : " + heap[i] + " LEFT CHILD : " + heap[2 * i + 1] + " RIGHT CHILD :" + heap[2 * i + 2]);
+			System.out.println();
 		}
+	}
 
-		void downheapify(int idx) {
-			int maxidx = idx;
-			int lci = 2 * idx + 1;
-			int rci = 2 * idx + 1;
-
-			if (lci < arr.size() && compareTo((int) arr.get(lci), (int) arr.get(maxidx)) > 0) {
-				maxidx = lci;
-			}
-			if (rci < arr.size() && compareTo((int) arr.get(rci), (int) arr.get(maxidx)) > 0) {
-				maxidx = rci;
-			}
-
-			if (maxidx != idx) {
-				swap(maxidx, idx);
-				downheapify(maxidx);
-			}
-
+	public static void main(String[] args) {
+		System.out.println("The Max Heap is ");
+		boolean ismax = false;
+		Heap maxHeap = new Heap(15, ismax);
+		maxHeap.insert(5);
+		maxHeap.insert(3);
+		maxHeap.insert(17);
+		maxHeap.insert(10);
+		maxHeap.insert(84);
+		maxHeap.insert(19);
+		maxHeap.insert(6);
+		maxHeap.insert(22);
+		maxHeap.insert(9);
+		System.out.println();
+		maxHeap.print();
+		for (int i : maxHeap.heap) {
+			System.out.print(" " + i);
 		}
-
-		private void swap(int x, int y) {
-			Integer val1 = arr.get(x);
-			Integer val2 = arr.get(y);
-
-			arr.set(x, val2);
-			arr.set(y, val1);
-
-		}
-
-		int compareTo(Integer val1, Integer val2) {
-			if (isMax) {
-				return val1 - val2;
-			} else {
-				return val2 - val1;
-			}
-		}
-
+		System.out.println("The " + (ismax == true ? "max" : "min") + " val is " + maxHeap.remove());
 	}
 
 }

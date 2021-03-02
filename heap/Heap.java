@@ -1,14 +1,18 @@
 import java.util.ArrayList;
 
-public class Main {
+public class Heap {
 
     public static class PriorityQueue {
         ArrayList<Integer> data;
 
-        public PriorityQueue(int []arr) {
+        public PriorityQueue() {
             data = new ArrayList<>();
             for (int val : arr) {
-                this.add(val);
+                data.add(val);
+            }
+
+            for (int i = data.size() / 2 - 1; i >= 0; i--) {
+                downHeapify(i);
             }
         }
 
@@ -53,12 +57,12 @@ public class Main {
 
             if (mini != pi) {
                 swap(mini, pi);
-                downHeapify(mini); 
+                downHeapify(mini);
             }
         }
 
         public void swap(int i, int j) {
-            int ith = data.get(i); 
+            int ith = data.get(i);
             data.set(i, data.get(j));
             data.set(j, ith);
         }
